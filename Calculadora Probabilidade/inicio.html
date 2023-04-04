@@ -1,328 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Probabilidade</title>
 </head>
-    <body>
-        <div class="clear"> </div>
-        <h1>Calculadora de Probabilidade <div class="clac_lang_menu clearfix">
-            </div></h1><p style="margin:0 0.1em; font-size:0.90em;" class="topDeskDesc">A probabilidade é a chance de que um determinado evento irá ocorrer. É expressa como um número entre 0 e 1 (em que 0 indica falso e 1 indica verdadeiro ). Nesta calculadora de estatísticas on-line, calcule a probabilidade de eventos únicos e múltiplos baseados no número de possíveis resultados e eventos ocorrerem.</p>  
-             <div class="ec_calculator_gen clearfix">
-                <div class="clear"></div>
-            <form name="first">
-             <div id="overlayLoader" style="top: 709px; display: none;">
-                    <div class="loader"> </div>
+
+<body>
+    <div class="clear"> </div>
+    <h1>Calculadora de Probabilidade <div class="clac_lang_menu clearfix">
+        </div>
+    </h1>
+    <p style="margin:0 0.1em; font-size:0.90em;" class="topDeskDesc">A probabilidade é a chance de que um determinado
+        evento irá ocorrer. É expressa como um número entre 0 e 1 (em que 0 indica falso e 1 indica verdadeiro ). Nesta
+        calculadora de estatísticas on-line, calcule a probabilidade de eventos únicos e múltiplos baseados no número de
+        possíveis resultados e eventos ocorrerem.</p>
+    <div class="ec_calculator_gen clearfix">
+        <div class="clear"></div>
+        <form name="first">
+            <div id="overlayLoader" style="top: 709px; display: none;">
+                <div class="loader"> </div>
+            </div>
+            <div id="dispCalcConts" style="opacity: 1;">
+                <div class="group clearfix">
+                    <h4>Probabilidade de Evento Único</h4>
+
+                    <label>Número de resultados possíveis</label>
+                    <input type="text" id="ss" onkeyup="check(this)">
+                    <label>Número de eventos ocorridos</label>
+                    <input type="text" id="sf" onkeyup="check(this)">
                 </div>
-                <div id="dispCalcConts" style="opacity: 1;"><div class="group clearfix">
-        <h4>Probabilidade de Evento Único</h4>
-      
-        <label>Número de resultados possíveis</label>
-        <input type="text" id="ss" onkeyup="check(this)">
-        <label>Número de eventos ocorridos</label>
-        <input type="text" id="sf" onkeyup="check(this)">
-        </div>
-        <div aligns="center"><input type="button" value="Calcular" id="cf" onclick="scal()" style="visibility: visible;"> <input type="reset" value="Restabelecer" style="visibility: visible;"><div class="errClass" id="dynErrDisp"></div><div id="calciScroll"></div></div>
-        
-        <div class="group clearfix result">
-        <h4>Resultado</h4>
-        <label>Probabilidade de eventos ocorrerem P(A)</label>
-        <input type="text" readonly="" id="spa">
-        <label>Probabilidade de eventos não ocorrerem P (A')</label>
-        <input type="text" id="sp" readonly="">
-        </div>
-        
-        <hr>
-        <div class="group clearfix">
-        <h4>Probabilidade de Eventos Múltiplos</h4>
-        <label>Número de resultados possíveis</label>
-        <input type="text" id="sm" onkeyup="check(this)">
-        <label>Número de eventos ocorreram em Um</label>
-        <input type="text" id="a" onkeyup="check(this)">
-        <label>Número de eventos ocorreram em B</label>
-        <input type="text" id="b" onkeyup="check(this)">
-        <label><b>Nota:</b> A &amp; B são eventos mutuamente exclusivos </label>
-        </div>
-        <div aligns="center"><input type="button" value="Calcular" id="pf" onclick="mcal()" style="visibility: visible;"><input type="reset" value="Restabelecer" style="visibility: visible;"><div class="errClass" id="dynErrDisp"></div><div id="calciScroll"></div></div>
-        
-        <div class="result">
-        <h4>Resultado</h4>
-        <div class="group clearfix">
-        <div class="group_con" aligns="right">
-        <label> P(A):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" readonly="" id="pa">
-        </div>
-        
-        <div class="group_con" aligns="right">
-        <label> P(A'):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" id="pda" readonly="">
-        </div></div>
-        
-        <div class="group clearfix">
-        <div class="group_con" aligns="right">
-        <label> P(B):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" id="pb" readonly="">
-        </div>
-        
-        <div class="group_con" aligns="right">
-        <label> P(B' ):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" id="pdb" readonly="">
-        </div></div>
-        
-        <div class="group clearfix">
-        <div class="group_con" aligns="right">
-        <label>P(A ∩ B):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" id="pib" readonly="">
-        </div>
-        
-        <div class="group_con" aligns="right">
-        <label>P(A ∪ B):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" id="pua" readonly="">
-        </div></div>
-        
-        <div class="group clearfix">
-        <div class="group_con" aligns="right">
-        <label>P(A | B):</label>
-        </div>
-        
-        <div class="group_con">
-        <input type="text" id="acb" readonly="">
-        </div></div></div>
-        </div>	</form>
-          <p style="margin:0 0.1em; font-size:0.90em;" class="topMobiDesc">A probabilidade é a chance de que um determinado evento irá ocorrer. É expressa como um número entre 0 e 1 (em que 0 indica falso e 1 indica verdadeiro ). Nesta calculadora de estatísticas, calcule a probabilidade de eventos únicos e múltiplos baseados no número de possíveis resultados e eventos ocorrerem.</p>     <!-- ec_calculator ends -->
-             <div class="clear"> </div>
+                <div aligns="center"><input type="button" value="Calcular" id="cf" onclick="scal()"
+                        style="visibility: visible;"> <input type="reset" value="Restabelecer"
+                        style="visibility: visible;">
+                    <div class="errClass" id="dynErrDisp"></div>
+                    <div id="calciScroll"></div>
+                </div>
+
+                <div class="group clearfix result">
+                    <h4>Resultado</h4>
+                    <label>Probabilidade de eventos ocorrerem P(A)</label>
+                    <input type="text" readonly="" id="spa">
+                    <label>Probabilidade de eventos não ocorrerem P (A')</label>
+                    <input type="text" id="sp" readonly="">
+                </div>
+
+                <hr>
+                <div class="group clearfix">
+                    <h4>Probabilidade de Eventos Múltiplos</h4>
+                    <label>Número de resultados possíveis</label>
+                    <input type="text" id="sm" onkeyup="check(this)">
+                    <label>Número de eventos ocorreram em Um</label>
+                    <input type="text" id="a" onkeyup="check(this)">
+                    <label>Número de eventos ocorreram em B</label>
+                    <input type="text" id="b" onkeyup="check(this)">
+                    <label><b>Nota:</b> A &amp; B são eventos mutuamente exclusivos </label>
+                </div>
+                <div aligns="center"><input type="button" value="Calcular" id="pf" onclick="mcal()"
+                        style="visibility: visible;"><input type="reset" value="Restabelecer"
+                        style="visibility: visible;">
+                    <div class="errClass" id="dynErrDisp"></div>
+                    <div id="calciScroll"></div>
+                </div>
+
+                <div class="result">
+                    <h4>Resultado</h4>
+                    <div class="group clearfix">
+                        <div class="group_con" aligns="right">
+                            <label> P(A):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" readonly="" id="pa">
+                        </div>
+
+                        <div class="group_con" aligns="right">
+                            <label> P(A'):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" id="pda" readonly="">
+                        </div>
+                    </div>
+
+                    <div class="group clearfix">
+                        <div class="group_con" aligns="right">
+                            <label> P(B):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" id="pb" readonly="">
+                        </div>
+
+                        <div class="group_con" aligns="right">
+                            <label> P(B' ):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" id="pdb" readonly="">
+                        </div>
+                    </div>
+
+                    <div class="group clearfix">
+                        <div class="group_con" aligns="right">
+                            <label>P(A ∩ B):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" id="pib" readonly="">
+                        </div>
+
+                        <div class="group_con" aligns="right">
+                            <label>P(A ∪ B):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" id="pua" readonly="">
+                        </div>
+                    </div>
+
+                    <div class="group clearfix">
+                        <div class="group_con" aligns="right">
+                            <label>P(A | B):</label>
+                        </div>
+
+                        <div class="group_con">
+                            <input type="text" id="acb" readonly="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <p style="margin:0 0.1em; font-size:0.90em;" class="topMobiDesc">A probabilidade é a chance de que um
+            determinado evento irá ocorrer. É expressa como um número entre 0 e 1 (em que 0 indica falso e 1 indica
+            verdadeiro ). Nesta calculadora de estatísticas, calcule a probabilidade de eventos únicos e múltiplos
+            baseados no número de possíveis resultados e eventos ocorrerem.</p> <!-- ec_calculator ends -->
+        <div class="clear"> </div>
 
         <div class="clear"> </div>
-        </div><div class="formula"><h4>Probabilidade de Evento Único fórmula:</h4>
+    </div>
+    <div class="formula">
+        <h4>Probabilidade de Evento Único fórmula:</h4>
         <fonte style="line-height:25px"> Probabilidade de eventos ocorrerem P(A) = n(A) / n(S).
-        Probabilidade de eventos não ocorrerem P (A') = 1 - P(A).
+            Probabilidade de eventos não ocorrerem P (A') = 1 - P(A).
         </fonte>
-        
+
         <h4>Probabilidade de Eventos Múltiplos Fórmula :</h4>
         <fonte style="line-height:25px"> Probabilidade de eventos ocorrerem P(A) = n(A) / n(S).
-        Probabilidade de eventos não ocorrerem P (A') = 1 - P(A).
-        B Probabilidade de eventos ocorrerem P(B) = n(B) / n(S).
-        B probabilidade de eventos não ocorrem P (B') = 1 - P(B).
-        A probabilidade de que ambos ocorrem os eventos P(A ∩ B) = P(A) x P(B).
-        A probabilidade de que qualquer um dos eventos ocorre P(A ∪ B) = P(A) + P(B) - P(A ∩ B).
-        Probabilidade Condicional P(A | B) = P(A ∩ B) / P(B).
-        </fonte> 
+            Probabilidade de eventos não ocorrerem P (A') = 1 - P(A).
+            B Probabilidade de eventos ocorrerem P(B) = n(B) / n(S).
+            B probabilidade de eventos não ocorrem P (B') = 1 - P(B).
+            A probabilidade de que ambos ocorrem os eventos P(A ∩ B) = P(A) x P(B).
+            A probabilidade de que qualquer um dos eventos ocorre P(A ∪ B) = P(A) + P(B) - P(A ∩ B).
+            Probabilidade Condicional P(A | B) = P(A ∩ B) / P(B).
+        </fonte>
         <b>Onde,</b>
         n(A) - Número de Ocorrência no Evento A
         n(B) - Número de Ocorrência no Evento B
         n(S) - Número total de resultados possíveis
-        
-        </div>
-        
-        <div class="calc_example clearfix">
+
+    </div>
+
+    <div class="calc_example clearfix">
         <h3>Exemplo</h3>
-        
+
         <div class="calc_example_con clearfix">
-        <div class="calc_example_con_left"><span class="calc_example_hand"></span></div>
-        <div class="calc_example_con_right">
-        <h4>Probabilidade Evento Único</h4>
-        <p>
-        <strong>Encontre único probabilitiy evento, dado n(s) = 20, P(A) = 13 </strong><br> <br>
-        
-        <b>Passo 1 : </b> Encontrar P(A)  <br>
-                <span class="calc_hilit"> P(A)</span> = 13 / 20 = <span class="calc_hilit"> 0.65 </span><br><br>
-        
-        <b>Passo 2 : </b> Encontrar P(A')  <br>
-                  <span class="calc_hilit"> P(A') </span> = 1 - 0.65 =<span class="calc_hilit">  0.35</span> <br><br>
-        
-        </p></div>
+            <div class="calc_example_con_left"><span class="calc_example_hand"></span></div>
+            <div class="calc_example_con_right">
+                <h4>Probabilidade Evento Único</h4>
+                <p>
+                    <strong>Encontre único probabilitiy evento, dado n(s) = 20, P(A) = 13 </strong><br> <br>
+
+                    <b>Passo 1 : </b> Encontrar P(A) <br>
+                    <span class="calc_hilit"> P(A)</span> = 13 / 20 = <span class="calc_hilit"> 0.65 </span><br><br>
+
+                    <b>Passo 2 : </b> Encontrar P(A') <br>
+                    <span class="calc_hilit"> P(A') </span> = 1 - 0.65 =<span class="calc_hilit"> 0.35</span> <br><br>
+
+                </p>
+            </div>
         </div>
-        
-        
+
+
         <div class="calc_example_con clearfix">
-        <div class="calc_example_con_left"><span class="calc_example_hand"></span></div>
-        <div class="calc_example_con_right">
-        <h4>Multiple Probabilidade Evento</h4>
-        <p>
-        <strong>Encontre múltipla probabilitiy evento, dado n(s) = 10, n(A) = 8 and n(B) = 2  </strong><br> <br>
-        
-        <b>Passo 1 : </b> Encontrar P(A)  <br>
-                <span class="calc_hilit"> P(A)</span> = 8 / 10 = <span class="calc_hilit"> 0.8 </span><br><br>
-        
-        <b>Passo 2 : </b> Encontrar P(A')  <br>
-                  <span class="calc_hilit"> P(A') </span> = 1 - 0.8 =<span class="calc_hilit">  0.2</span> <br><br>
-        
-        <b>Passo 3 : </b> Encontrar P(B) <br>
-                <span class="calc_hilit"> P(B)</span> = 2 / 10 = <span class="calc_hilit"> 0.2</span><br><br>
-        
-        <b>Passo 4 : </b> Encontrar P(B') <br>
-                 <span class="calc_hilit">  P(B')</span> = 1 - 0.2 = <span class="calc_hilit"> 0.8</span> <br><br>
-        
-        <b>Passo 5 : </b> Encontrar P(A ∩ B)<br>
-                 <span class="calc_hilit"> P(A ∩ B)</span> = 0.8 *0.2 = <span class="calc_hilit"> 0.16</span><br><br>
-        
-        <b>Passo 6 : </b> Encontrar P(A ∪ B)<br>
-                <span class="calc_hilit">  P(A ∪ B)</span> = ( 0.8 + 0.2 ) - 0.16  = <span class="calc_hilit"> 0.84</span> <br><br>
-        <b>Passo 7 : </b> Encontrar P(A | B)<br>
-                 <span class="calc_hilit"> P(A | B)</span> = 0.16 / 0.2 = <span class="calc_hilit"> 0.8</span> <br><br>
-        
-        </p>
+            <div class="calc_example_con_left"><span class="calc_example_hand"></span></div>
+            <div class="calc_example_con_right">
+                <h4>Multiple Probabilidade Evento</h4>
+                <p>
+                    <strong>Encontre múltipla probabilitiy evento, dado n(s) = 10, n(A) = 8 and n(B) = 2 </strong><br>
+                    <br>
+
+                    <b>Passo 1 : </b> Encontrar P(A) <br>
+                    <span class="calc_hilit"> P(A)</span> = 8 / 10 = <span class="calc_hilit"> 0.8 </span><br><br>
+
+                    <b>Passo 2 : </b> Encontrar P(A') <br>
+                    <span class="calc_hilit"> P(A') </span> = 1 - 0.8 =<span class="calc_hilit"> 0.2</span> <br><br>
+
+                    <b>Passo 3 : </b> Encontrar P(B) <br>
+                    <span class="calc_hilit"> P(B)</span> = 2 / 10 = <span class="calc_hilit"> 0.2</span><br><br>
+
+                    <b>Passo 4 : </b> Encontrar P(B') <br>
+                    <span class="calc_hilit"> P(B')</span> = 1 - 0.2 = <span class="calc_hilit"> 0.8</span> <br><br>
+
+                    <b>Passo 5 : </b> Encontrar P(A ∩ B)<br>
+                    <span class="calc_hilit"> P(A ∩ B)</span> = 0.8 *0.2 = <span class="calc_hilit"> 0.16</span><br><br>
+
+                    <b>Passo 6 : </b> Encontrar P(A ∪ B)<br>
+                    <span class="calc_hilit"> P(A ∪ B)</span> = ( 0.8 + 0.2 ) - 0.16 = <span class="calc_hilit">
+                        0.84</span> <br><br>
+                    <b>Passo 7 : </b> Encontrar P(A | B)<br>
+                    <span class="calc_hilit"> P(A | B)</span> = 0.16 / 0.2 = <span class="calc_hilit"> 0.8</span>
+                    <br><br>
+
+                </p>
+            </div>
         </div>
-        </div>
-        </div>
-        <div class="clear"></div>
-        <p>Esta ferramenta irá ajudá-lo dinamicamente a calcular probabilidades estatísticas normais básicas. </p>
-        <div class="clear"></div>
-        
-        
-        <div class="clear"> </div>
-        <br>
-        <script type="text/javascript">
-            if(tblfilename!="allele-frequency-calculator.php") {
-              window._taboola = window._taboola || [];
-              _taboola.push({
+    </div>
+    <div class="clear"></div>
+    <p>Esta ferramenta irá ajudá-lo dinamicamente a calcular probabilidades estatísticas normais básicas. </p>
+    <div class="clear"></div>
+
+
+    <div class="clear"> </div>
+    <br>
+    <script type="text/javascript">
+        if (tblfilename != "allele-frequency-calculator.php") {
+            window._taboola = window._taboola || [];
+            _taboola.push({
                 mode: 'thumbnails-a',
                 container: 'taboola-below-article-thumbnails',
                 placement: 'Below Article Thumbnails',
                 target_type: 'mix'
-              });
-            }
-        </script>
-        
-        
-        </div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5279176980875369&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1680444048&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C8%3A134217728%2C9%3A134250504%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fwww.easycalculation.com%2Fpt%2Fstatistics%2Fprobability.php&amp;ea=0&amp;pra=5&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTExLjAuNTU2My4xNDciLFtdLGZhbHNlLG51bGwsIjY0IixbWyJHb29nbGUgQ2hyb21lIiwiMTExLjAuNTU2My4xNDciXSxbIk5vdChBOkJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMTEuMC41NTYzLjE0NyJdXSxmYWxzZV0.&amp;dt=1680444047843&amp;bpp=7&amp;bdt=135&amp;idt=350&amp;shv=r20230329&amp;mjsv=m202303290101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Daa2a68093b67cfe5-2214ea16f7de0023%3AT%3D1680443502%3ART%3D1680443502%3AS%3DALNI_MY9-kqgclgD4GK0rSn_EgNotMKwSg&amp;gpic=UID%3D00000a3b41a27d45%3AT%3D1680443502%3ART%3D1680443502%3AS%3DALNI_MZds4hGyn8Ui7YZquKWlgRTvzAeQw&amp;nras=1&amp;correlator=905404122824&amp;frm=20&amp;pv=2&amp;ga_vid=2009205435.1680444048&amp;ga_sid=1680444048&amp;ga_hid=1866074173&amp;ga_fc=0&amp;u_tz=-180&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=794&amp;bih=625&amp;scr_x=0&amp;scr_y=1177&amp;eid=44759927%2C44759837%2C44759876%2C31073107%2C31073534%2C44785294&amp;oid=2&amp;pvsid=4487701723341004&amp;tmod=404688919&amp;uas=0&amp;nvt=3&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C728%2C811%2C625&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=405" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins>
-        <!-- content ends -->
-        
-        <script type="text/javascript">
-            var chf_rss=true;
-            function getPathFromUrl(url){return url.split("?")[0];}
-            var curUrl = window.location.pathname; 
-            var basName = curUrl.replace(/^.*[\/\\]/g, '');
-            var curencyIndx = false;
-        </script>
-        
-            <script src="https://www.easycalculation.com/js/jquery.min.js?v0.4"></script>
-        <script src="https://www.easycalculation.com/common.js?v5.9"></script>
-        <script src="https://www.easycalculation.com/js/jquery.sticky.js?v0.1"></script>
-        <script language="javascript">
-        function check(ad)
-        {
-            var ch=ad.value;
-            if(isNaN(ch))
-            {
-                var df=ch.substring(0,(ch.length-1));
-                ad.value=df;
-            }	
+            });
         }
-        
-        
-        function scal()
-        {
-            if((($('#ss').val())=='')||(($('#sf').val())==''))
-            {
+    </script>
+
+
+    </div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"
+        data-ad-status="unfilled">
+        <div id="aswift_0_host"
+            style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"
+            tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_0" name="aswift_0"
+                style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;"
+                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true"
+                scrolling="no"
+                src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-5279176980875369&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1680444048&amp;plat=1%3A8%2C2%3A8%2C3%3A2162688%2C4%3A2162688%2C8%3A134217728%2C9%3A134250504%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fwww.easycalculation.com%2Fpt%2Fstatistics%2Fprobability.php&amp;ea=0&amp;pra=5&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTExLjAuNTU2My4xNDciLFtdLGZhbHNlLG51bGwsIjY0IixbWyJHb29nbGUgQ2hyb21lIiwiMTExLjAuNTU2My4xNDciXSxbIk5vdChBOkJyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMTEuMC41NTYzLjE0NyJdXSxmYWxzZV0.&amp;dt=1680444047843&amp;bpp=7&amp;bdt=135&amp;idt=350&amp;shv=r20230329&amp;mjsv=m202303290101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Daa2a68093b67cfe5-2214ea16f7de0023%3AT%3D1680443502%3ART%3D1680443502%3AS%3DALNI_MY9-kqgclgD4GK0rSn_EgNotMKwSg&amp;gpic=UID%3D00000a3b41a27d45%3AT%3D1680443502%3ART%3D1680443502%3AS%3DALNI_MZds4hGyn8Ui7YZquKWlgRTvzAeQw&amp;nras=1&amp;correlator=905404122824&amp;frm=20&amp;pv=2&amp;ga_vid=2009205435.1680444048&amp;ga_sid=1680444048&amp;ga_hid=1866074173&amp;ga_fc=0&amp;u_tz=-180&amp;u_his=2&amp;u_h=768&amp;u_w=1366&amp;u_ah=728&amp;u_aw=1366&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=794&amp;bih=625&amp;scr_x=0&amp;scr_y=1177&amp;eid=44759927%2C44759837%2C44759876%2C31073107%2C31073534%2C44785294&amp;oid=2&amp;pvsid=4487701723341004&amp;tmod=404688919&amp;uas=0&amp;nvt=3&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1366%2C0%2C1366%2C728%2C811%2C625&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=405"
+                data-google-container-id="a!1" data-load-complete="true"></iframe></div>
+    </ins>
+    <!-- content ends -->
+
+    <script type="text/javascript">
+        var chf_rss = true;
+        function getPathFromUrl(url) { return url.split("?")[0]; }
+        var curUrl = window.location.pathname;
+        var basName = curUrl.replace(/^.*[\/\\]/g, '');
+        var curencyIndx = false;
+    </script>
+
+    <script src="https://www.easycalculation.com/js/jquery.min.js?v0.4"></script>
+    <script src="https://www.easycalculation.com/common.js?v5.9"></script>
+    <script src="https://www.easycalculation.com/js/jquery.sticky.js?v0.1"></script>
+    <script language="javascript">
+        function check(ad) {
+            var ch = ad.value;
+            if (isNaN(ch)) {
+                var df = ch.substring(0, (ch.length - 1));
+                ad.value = df;
+            }
+        }
+
+
+        function scal() {
+            if ((($('#ss').val()) == '') || (($('#sf').val()) == '')) {
                 alert('Digite entrada válida');
             }
-            else
-            {
+            else {
                 var ss = parseInt($('#ss').val());
-                var sf = parseInt($('#sf').val());	
-            
-                var spa = Math.round((sf/ss)*1000)/1000;
+                var sf = parseInt($('#sf').val());
+
+                var spa = Math.round((sf / ss) * 1000) / 1000;
                 $('#spa').val(spa);
-                
-                var sp = 1-spa;
-                $('#sp').val(Math.round(sp*1000)/1000);
-        
-                if(sf > ss)
-                {
+
+                var sp = 1 - spa;
+                $('#sp').val(Math.round(sp * 1000) / 1000);
+
+                if (sf > ss) {
                     $('#spa').val(0);
                     $('#sp').val(0);
                     alert('Número de evento ocorre deve sempre inferior ao número de resultados possíveis');
                 }
             }
         }
-        
-        
-        function mcal()
-        {
-            if((($('#sm').val())=='')||(($('#a').val())=='')||(($('#b').val())==''))
-            {
+
+
+        function mcal() {
+            if ((($('#sm').val()) == '') || (($('#a').val()) == '') || (($('#b').val()) == '')) {
                 alert('Digite entrada válida');
             }
-            else
-            {
-                var a=parseInt($('#a').val());
-                var b=parseInt($('#b').val());
-                var n=parseInt($('#sm').val());
-                
-                var pa = Math.round((a/n)*1000)/1000;	
-                $('#pa').val( pa);
-                $('#pda').val( Math.round((1-pa)*1000)/1000);
-                var pb = Math.round((b/n)*1000)/1000;	
-                $('#pb').val( pb);
-                $('#pdb').val( Math.round((1-pb)*1000)/1000);
-                var pib = Math.round((pa*pb)*1000)/1000;
-                $('#pib').val( pib);
-                var pua = pa+pb-pib;
-                $('#pua').val( Math.round((pua)*1000)/1000);
-                var acb = pib/pb;
-        
-                $('#acb').val( Math.round((acb)*1000)/1000);
-        
-                
-                if(n < a || n < b)
-                {
-        
-                    $('#pa').val( 0);
-        
-                    $('#pb').val( 0);
-        
-                    $('#pda').val( 0);
-        
-                    $('#pdb').val( 0);
-        
-                    $('#pib').val( 0);
-        
-                    $('#pua').val( 0);
-        
-                    $('#acb').val( 0);
-        
+            else {
+                var a = parseInt($('#a').val());
+                var b = parseInt($('#b').val());
+                var n = parseInt($('#sm').val());
+
+                var pa = Math.round((a / n) * 1000) / 1000;
+                $('#pa').val(pa);
+                $('#pda').val(Math.round((1 - pa) * 1000) / 1000);
+                var pb = Math.round((b / n) * 1000) / 1000;
+                $('#pb').val(pb);
+                $('#pdb').val(Math.round((1 - pb) * 1000) / 1000);
+                var pib = Math.round((pa * pb) * 1000) / 1000;
+                $('#pib').val(pib);
+                var pua = pa + pb - pib;
+                $('#pua').val(Math.round((pua) * 1000) / 1000);
+                var acb = pib / pb;
+
+                $('#acb').val(Math.round((acb) * 1000) / 1000);
+
+
+                if (n < a || n < b) {
+
+                    $('#pa').val(0);
+
+                    $('#pb').val(0);
+
+                    $('#pda').val(0);
+
+                    $('#pdb').val(0);
+
+                    $('#pib').val(0);
+
+                    $('#pua').val(0);
+
+                    $('#acb').val(0);
+
                     alert('O tamanho da amostra deve ser maior do que ambos A e B');
                 }
             }
-        
+
         }
-        </script>		<script type="text/javascript">
-                function alert(val)
-                {
-                    $("#dynErrDisp").show();
-                    $("#dynErrDisp").html(val);
-                }
-                $(document).ready(function() {
-                    closeModal();
-                });
-                </script>
-        <a href="https://www.easycalculation.com/sitemap.xml" style="display:none">Sitemap</a>
-        <script type="text/javascript">
-            var mobiScrnWidth = $(window).width();
-            function showhidetopcate(obj) {if (mobiScrnWidth < 480){var currightid = obj.id;if(currightid == "topcaterightbox") {$("#popcalcrightbox ul").hide();}else if(currightid == "popcalcrightbox") {$("#topcaterightbox ul").hide();}$("#"+currightid+" ul").show();}}
-            $(document).ready(function(){if (mobiScrnWidth < 480){$("#popcalcrightbox ul").hide();$("#topcaterightbox ul").hide();}});
-        </script>
-        
+    </script>
+    <script type="text/javascript">
+        function alert(val) {
+            $("#dynErrDisp").show();
+            $("#dynErrDisp").html(val);
+        }
+        $(document).ready(function () {
+            closeModal();
+        });
+    </script>
+    <a href="https://www.easycalculation.com/sitemap.xml" style="display:none">Sitemap</a>
+    <script type="text/javascript">
+        var mobiScrnWidth = $(window).width();
+        function showhidetopcate(obj) { if (mobiScrnWidth < 480) { var currightid = obj.id; if (currightid == "topcaterightbox") { $("#popcalcrightbox ul").hide(); } else if (currightid == "popcalcrightbox") { $("#topcaterightbox ul").hide(); } $("#" + currightid + " ul").show(); } }
+        $(document).ready(function () { if (mobiScrnWidth < 480) { $("#popcalcrightbox ul").hide(); $("#topcaterightbox ul").hide(); } });
+    </script>
+
 </body>
+
 </html>
