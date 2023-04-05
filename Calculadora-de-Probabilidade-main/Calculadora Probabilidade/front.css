@@ -1,0 +1,66 @@
+body {
+    background-image: url("Smatematico.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    background-color: lightblue;
+    text-align: center;
+    border-style: dotted;
+    border-style: dotted solid;
+    border-radius: 5px;
+    margin-right: 130px;
+    margin-left: 80px;
+    font-size: 50px;
+}
+
+
+
+div {
+
+    margin-right: 150px;
+    margin-left: 80px;
+
+}
+
+#introduçao {
+    text-align: justify;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: rgb(143, 176, 187);
+    text-align: left;
+    margin-right: 130px;
+    font-size: 19px;
+}
+
+#observação {
+    text-align: justify;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: rgb(231, 187, 121);
+    margin-right: 300px;
+    font-size: 18px;
+    margin-left: 280px;
+}
+
+#resultado {
+    border-left: 6px solid #2e6b4abe;
+    background-color: #85e4af;
+    margin-right: 120px;
+    font-size: 20px;
+
+}
+
+
+h4 {
+    border-left: 6px solid #b18585e8;
+    background-color: #dab7b7;
+    margin-right: 130px;
+    font-size: 20px;
+}
+
+.alert {
+    color: #ee6666;
+}
